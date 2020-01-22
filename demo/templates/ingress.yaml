@@ -2,7 +2,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: demo-vs
-  namespace: demo
+  namespace: {{ .Values.namespace }}
 spec:
     hosts:
     - {{ .Values.ingress.host }}
@@ -11,14 +11,14 @@ spec:
     http:
     - route:
         - destination:
-            host: "{{ include "demo.fullname" . }}.{{ include "demo.fullname" . }}.svc.cluster.local"
+            host: "{{ include "demo.fullname" . }}{{ .Values.namespace }}.svc.cluster.local"
 
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: demo-gateway
-  namespace: demo
+  namespace: {{ .Values.namespace }}
 spec:
   selector:
     istio: ingressgateway

@@ -5,7 +5,7 @@ metadata:
   namespace: demo
 spec:
     hosts:
-    - {{ .Values.ingress.hosts }}
+    - {{ .Values.ingress.host }}
     gateways:
     - demo-gateway
     http:

@@ -1,3 +1,13 @@
 apiVersion: v1
-entries: {}
-generated: 2020-01-22T11:13:54.5203329+08:00
+entries:
+  demo:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2020-01-22T11:36:39.7769219+08:00
+    description: A Helm chart for Kubernetes
+    digest: d9199a8a7bd889cd8f25c2cfed0a500ff5a966580b35c785698547beaa1d4564
+    name: demo
+    urls:
+    - https://whiteworker.github.io/demo-helmchart/demo-0.1.0.tgz
+    version: 0.1.0
+generated: 2020-01-22T11:36:39.7749216+08:00

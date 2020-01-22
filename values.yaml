@@ -17,9 +17,8 @@ service:
   port: 80
 
 ingress:
-  hosts:
-    - host: k8s.demo.tencent.com
-      paths: []
+  host: k8s.demo.tencent.com
+  paths: []
   tls: []
 
 resources: 

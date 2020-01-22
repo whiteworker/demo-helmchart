@@ -5,13 +5,13 @@ metadata:
   namespace: demo
 spec:
     hosts:
-    - {{ .Values.ingress.hosts.host }}
+    - {{ .Values.ingress.hosts }}
     gateways:
     - demo-gateway
     http:
     - route:
         - destination:
-            host: {{ include "demo.fullname" . include "demo.fullname"}}.svc.cluster.local
+            host: "{{ include "demo.fullname" . }}.{{ include "demo.fullname" . }}.svc.cluster.local"
 
 ---
 apiVersion: networking.istio.io/v1alpha3
@@ -28,4 +28,4 @@ spec:
         name: http
         protocol: HTTP
       hosts:
-        - {{ .Values.ingress.hosts.host }}
+        - {{ .Values.ingress.host }}
